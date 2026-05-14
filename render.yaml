@@ -1,0 +1,18 @@
+# Render Blueprint — static Vite + React (client-side routing).
+# Dashboard: New → Blueprint → paste this repo URL, or connect Git and select `render.yaml`.
+services:
+  - type: web
+    name: kiitec-web
+    runtime: static
+    rootDir: .
+    buildCommand: npm ci && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_PUBLIC_SITE_URL
+        sync: false
+      - key: VITE_MAP_EMBED_URL
+        sync: false
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
