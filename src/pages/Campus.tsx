@@ -3,7 +3,6 @@ import { CampusGallery } from "../components/CampusGallery";
 import { MapEmbed } from "../components/MapEmbed";
 import { PagePhotoHero } from "../components/PagePhotoHero";
 import { legacyImagesBase } from "../site/brand";
-import { campusGalleryPhotos } from "../data/sitePhotos";
 import { siteContact } from "../site/contact";
 
 const heroImage = `${legacyImagesBase}/2025/05/new4-1024x683.jpg`;
