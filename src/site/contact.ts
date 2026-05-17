@@ -12,7 +12,7 @@ export const siteContact = {
   mobile3Display: "0757 612 495",
   mobile3Tel: "+255757612495",
   email: "info@kiitec.ac.tz",
-  mapUrl: "https://maps.app.goo.gl/LTFrayCSpxKazpCEA",
+  mapUrl: "https://share.google/HnnDMnSMtn8Fm98O3",
   poBox: "P.O. Box 3172, Arusha",
   instagramHandle: "@kiitecinstitute",
   instagramUrl: "https://www.instagram.com/kiitecinstitute/",

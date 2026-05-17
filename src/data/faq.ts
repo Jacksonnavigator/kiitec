@@ -1,15 +1,14 @@
-/** FAQ blocks aligned with the published homepage “ask us anything” section. */
 export const homeFaq = [
   {
-    title: "Explore our Educational Offerings",
-    body: "Discover a wide range of educational opportunities with us, including Diploma programs, Professional Courses, and Short courses. Keep scrolling to find detailed information about each option.",
+    title: "What can I study?",
+    body: "NACTE diplomas in seven engineering fields, professional IT & security courses, and short skills programmes. See Programs for the list.",
   },
   {
-    title: "Affordable Fees and Flexible Payment Options",
-    body: "Take advantage of our budget-friendly fees and flexible payment options. We offer affordable rates and convenient installment plans to ensure that accessing our programs is financially feasible for all.",
+    title: "Fees and payment",
+    body: "Budget-friendly fees with instalment options. Confirm current amounts and dates with the registrar before you enrol.",
   },
   {
-    title: "Flexible Course Durations to Suit Your Learning Needs",
-    body: "Durations depend on the programme and intake. Indicative ranges are published on the Programs page and in registrar communications—confirm the current cycle, fees, and calendar before you enrol.",
+    title: "How long are courses?",
+    body: "Diplomas about 3 years; professional about 1 year; short courses from about 2–6 months. Intakes vary—check with the registrar.",
   },
 ] as const;

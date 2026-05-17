@@ -34,10 +34,7 @@ export function EnquiryForm() {
     <div id="registrar-enquiry" className="contact-form-wp">
       <h2 className="contact-form-wp__title">Contact us</h2>
       <p className="contact-form-wp__intro">
-        Send a message using the form below. Your email application will open with your details filled in—you can edit the message
-        before sending. For formal applications and attachments, follow the guidance on the{" "}
-        <Link to="/admissions">Admissions</Link> page, or use the <Link to="/apply-here">application form</Link> when you are ready
-        to apply.
+        Submit opens your email app. To apply formally, use the <Link to="/apply-here">Apply</Link> page instead.
       </p>
       <form className="enquiry-form enquiry-form--classic" onSubmit={handleSubmit}>
         <div className="enquiry-form__grid">

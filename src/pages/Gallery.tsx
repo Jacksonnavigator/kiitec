@@ -63,10 +63,7 @@ export function Gallery() {
       <div className="page-hero">
         <div className="container">
           <h1>Photo gallery</h1>
-          <p>
-            A curated selection from the institute media archive, grouped by theme. Thumbnails open in a full-screen preview on this page. To refresh the underlying file list after syncing media, run{" "}
-            <code className="gallery-code">npm run download:media</code>.
-          </p>
+          <p>Campus, labs, events, and student life—click a photo for a larger preview.</p>
         </div>
       </div>
       <div className="section container">
@@ -78,20 +75,8 @@ export function Gallery() {
         {!data && !err && <p className="section-intro">Loading gallery…</p>}
         {data && (
           <>
-            <p className="section-intro" style={{ fontSize: "0.9rem" }}>
-              {data.generated && (
-                <>
-                  Index generated {new Date(data.generated).toLocaleString()}
-                  {" · "}
-                </>
-              )}
-              Showing {curated.length} photos
-              {data.images.length > curated.length && (
-                <>
-                  {" "}
-                  (filtered from {data.images.length} files in the manifest: logos, placeholders, admin graphics, and duplicates are hidden)
-                </>
-              )}
+            <p className="section-intro" style={{ fontSize: "0.9rem", marginBottom: "1rem" }}>
+              {curated.length} photos
             </p>
 
             {GALLERY_SECTION_ORDER.map((sectionId: GallerySectionId) => {

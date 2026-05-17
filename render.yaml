@@ -6,7 +6,7 @@ services:
     runtime: static
     rootDir: .
     buildCommand: npm ci && npm run build
-    staticPublishPath: dist
+    staticPublishPath: build
     envVars:
       - key: VITE_PUBLIC_SITE_URL
         sync: false

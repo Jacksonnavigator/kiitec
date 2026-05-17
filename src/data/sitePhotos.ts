@@ -37,31 +37,7 @@ export const homeHeroBackgroundSlides = [
  * Each item has a short `title` for visible labels and a fuller `alt` for accessibility—both describe the same scene.
  */
 
-/** Home hero collage — titles shown under each tile. */
-export const homeHeroCollagePhotos = [
-  {
-    src: u("2023/06/Kiitec-welcome.jpeg"),
-    title: "Solar & electrical laboratory entrance",
-    alt: "Entrance to the Solar and Electrical Laboratory at KIITEC with welcome banner, partner logos including Schneider Electric, and the Tanzanian flag.",
-  },
-  {
-    src: u("2025/05/afternoon.jpeg"),
-    title: "Basketball handshake line-up",
-    alt: "KIITEC basketball players in yellow and green uniforms shaking hands with guests on the outdoor court in daylight.",
-  },
-  {
-    src: u("2025/05/night.jpeg"),
-    title: "Floodlit basketball court at night",
-    alt: "Students playing basketball on the KIITEC outdoor court at night under tall floodlights, with bleachers at the side.",
-  },
-  {
-    src: u("2025/05/IMG_6372-scaled.jpg"),
-    title: "Football training on the field",
-    alt: "Football training session on a grass pitch at KIITEC with players in light blue kits using hurdles and cones.",
-  },
-] as const;
-
-/** Home — campus & labs mosaic (same set as hero strip below hero). */
+/** Home — campus & labs mosaic. */
 export const homeCampusLifePhotos = [
   {
     src: u("2025/05/DB-Kiitec-43-scaled.jpg"),
@@ -204,6 +180,92 @@ export const programsStripPhotos = [
     src: u("2024/11/DBKiitec-29-scaled.jpg"),
     title: "Faculty and student cohort",
     alt: "Large formal group with seated officials in academic regalia and standing students in white shirts on the institute terrace.",
+  },
+] as const;
+
+/** Diploma cards on Programs + Home — image per pathway. */
+export const diplomaProgramVisuals = [
+  {
+    title: "Electrical & Computer Engineering",
+    meta: "Long term · NACTE",
+    imageSrc: u("2025/05/DB-Kiitec-43-scaled.jpg"),
+    imageAlt: "Computer teaching laboratory at KIITEC.",
+  },
+  {
+    title: "Electronics & Telecommunication Engineering",
+    meta: "Long term · NACTE",
+    imageSrc: u("2025/05/DB-Kiitec-45-scaled.jpg"),
+    imageAlt: "Electronics training benches with instruments.",
+  },
+  {
+    title: "Electrical & Industrial Automation Engineering",
+    meta: "Long term · NACTE",
+    imageSrc: u("2025/05/DB-Kiitec-44-scaled.jpg"),
+    imageAlt: "Industrial automation workshop with trainers.",
+  },
+  {
+    title: "Electrical & Renewable Energy Engineering",
+    meta: "Long term · NACTE",
+    imageSrc: u("2025/05/DB-Kiitec-47-scaled.jpg"),
+    imageAlt: "Renewable energy and electrical training lab.",
+  },
+  {
+    title: "Artificial Intelligence & Machine Learning Engineering",
+    meta: "Long term · NACTE",
+    imageSrc: u("2025/05/DB-Kiitec-32-1024x684.jpg"),
+    imageAlt: "Innovation lab with computers and 3D printer.",
+  },
+  {
+    title: "Data Science & Analytics Engineering",
+    meta: "Long term · NACTE",
+    imageSrc: u("2024/08/IMG_5947-scaled.jpg"),
+    imageAlt: "Students with a robotics project in the lab.",
+  },
+  {
+    title: "Robotics & Drones Engineering",
+    meta: "Long term · NACTE",
+    imageSrc: u("2024/08/IMG_6267-scaled.jpg"),
+    imageAlt: "Student engineering project on a workbench.",
+  },
+] as const;
+
+export const shortCourseVisuals = [
+  {
+    title: "IT and Security System courses",
+    meta: "Professional · ~1 year",
+    imageSrc: u("2025/05/DB-Kiitec-32-1024x684.jpg"),
+    imageAlt: "IT and networking lab equipment.",
+  },
+  {
+    title: "Domestic and Electrical Installation",
+    meta: "Short term · ~6 months",
+    imageSrc: u("2025/05/DB-Kiitec-38-1024x684.jpg"),
+    imageAlt: "Electrical and computer training lab.",
+  },
+  {
+    title: "Basic Computer Applications",
+    meta: "Short term · ~2 months",
+    imageSrc: u("2024/08/IMG_6800-1024x683.jpg"),
+    imageAlt: "Students in a computer classroom.",
+  },
+] as const;
+
+/** Home feature cards — image + short label. */
+export const homeFeaturePhotos = [
+  {
+    src: u("2025/05/DB-Kiitec-44-scaled.jpg"),
+    title: "Hands-on labs",
+    alt: "Automation workshop at KIITEC.",
+  },
+  {
+    src: u("2025/05/afternoon.jpeg"),
+    title: "Campus life",
+    alt: "Students on the outdoor basketball court.",
+  },
+  {
+    src: u("2024/11/DBKiitec-27-scaled.jpg"),
+    title: "Graduation day",
+    alt: "Graduates in academic dress at KIITEC.",
   },
 ] as const;
 

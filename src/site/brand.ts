@@ -30,10 +30,10 @@ export const facilitiesHighlightUrl = `${legacyImagesBase}/2023/06/labs.jpeg` as
 /**
  * Google Maps iframe `src` for embedded campus map.
  * In production, set `VITE_MAP_EMBED_URL` in Render to the full `src` from Google Maps → Share → Embed a map (most reliable).
- * Default: HTTPS embed pinned near the Suye / Moshono campus (Arusha).
+ * Default: HTTPS embed pinned to Don Bosco KIITEC campus (Arusha).
  */
 const DEFAULT_MAP_EMBED =
-  "https://www.google.com/maps?q=-3.3678,36.6895&z=16&hl=en&gl=tz&output=embed";
+  "https://www.google.com/maps?q=-3.3852531,36.7215455&z=16&hl=en&gl=tz&output=embed";
 
 export function getMapEmbedUrl(): string {
   const fromEnv = import.meta.env.VITE_MAP_EMBED_URL;

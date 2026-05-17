@@ -21,6 +21,11 @@ function openBrowser(url: string) {
 }
 
 export default defineConfig({
+  /** Render static sites often default publish dir to `build` (CRA-style); match that here. */
+  build: {
+    outDir: "build",
+    emptyOutDir: true,
+  },
   plugins: [
     react(),
     {
