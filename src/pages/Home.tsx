@@ -11,7 +11,7 @@ import {
   homeFeaturePhotos,
   homeHeroBackgroundSlides,
 } from "../data/sitePhotos";
-import { facilitiesHighlightUrl, logoUrl, mastercardLogoUrl, skillsToFlyPosterUrl, tagline } from "../site/brand";
+import { mastercardLogoUrl, skillsToFlyPosterUrl, tagline } from "../site/brand";
 import { siteContact } from "../site/contact";
 
 export function Home() {
