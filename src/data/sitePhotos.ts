@@ -50,7 +50,7 @@ export const homeCampusLifePhotos = [
     alt: "Workbenches with industrial automation trainers, motor drives, and patch-wired panels in a KIITEC workshop.",
   },
   {
-    src: u("2025/05/DB-Kiitec-45-scaled.jpg"),
+    src: u("2025/06/new-scaled.jpg"),
     title: "Electronics training benches",
     alt: "Laboratory with grey workbenches, flight cases, electronic training kits, and measuring instruments for practical classes.",
   },
@@ -194,7 +194,7 @@ export const diplomaProgramVisuals = [
   {
     title: "Electronics & Telecommunication Engineering",
     meta: "Long term · NACTE",
-    imageSrc: u("2025/05/DB-Kiitec-45-scaled.jpg"),
+    imageSrc: u("2025/06/new-scaled.jpg"),
     imageAlt: "Electronics training benches with instruments.",
   },
   {
@@ -218,13 +218,13 @@ export const diplomaProgramVisuals = [
   {
     title: "Data Science & Analytics Engineering",
     meta: "Long term · NACTE",
-    imageSrc: u("2024/08/IMG_5947-scaled.jpg"),
+    imageSrc: u("2024/08/IMG_6267-scaled.jpg"),
     imageAlt: "Students with a robotics project in the lab.",
   },
   {
     title: "Robotics & Drones Engineering",
     meta: "Long term · NACTE",
-    imageSrc: u("2024/08/IMG_6267-scaled.jpg"),
+    imageSrc: u("2024/08/IMG_5947-scaled.jpg"),
     imageAlt: "Student engineering project on a workbench.",
   },
 ] as const;

@@ -8,7 +8,6 @@ export function CampusGallery() {
           <li key={item.src} className="campus-gallery-item">
             <figure className="campus-figure">
               <img src={item.src} alt={item.alt} width={700} height={525} loading="lazy" decoding="async" />
-              <figcaption className="campus-caption">{item.title}</figcaption>
             </figure>
           </li>
         ))}

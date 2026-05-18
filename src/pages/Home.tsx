@@ -207,51 +207,6 @@ export function Home() {
           <FaqAccordion id="faq-heading" />
         </div>
       </section>
-
-      <section className="section container" aria-labelledby="visit-heading">
-        <div className="visual-split">
-          <div className="visual-split__text">
-            <h2 id="visit-heading" className="section-heading">
-              Visit us in Suye, Arusha
-            </h2>
-            <p className="section-intro" style={{ marginBottom: "1rem" }}>
-              About 6 km from the city centre. <Link to="/campus">Campus &amp; map</Link>
-            </p>
-            <div className="contact-block contact-block--compact">
-              <dl>
-                <dt>Landline</dt>
-                <dd>
-                  <a href={`tel:${siteContact.landlineTel}`}>{siteContact.landlineDisplay}</a>
-                </dd>
-                <dt>Mobile (line 2)</dt>
-                <dd>
-                  <a href={`tel:${siteContact.mobile2Tel}`}>{siteContact.mobile2Display}</a>
-                </dd>
-                <dt>Mobile (line 3)</dt>
-                <dd>
-                  <a href={`tel:${siteContact.mobile3Tel}`}>{siteContact.mobile3Display}</a>
-                </dd>
-                <dt>Registrar mobile</dt>
-                <dd>
-                  <a href={`tel:${siteContact.phoneE164}`}>{siteContact.phoneDisplay}</a>
-                </dd>
-                <dt>Email</dt>
-                <dd>
-                  <a href={`mailto:${siteContact.email}`}>{siteContact.email}</a>
-                </dd>
-                <dt>Postal address</dt>
-                <dd>{siteContact.poBox}</dd>
-                <dt>Google Maps</dt>
-                <dd>
-                  <a href={siteContact.mapUrl} target="_blank" rel="noreferrer">
-                    Campus pin
-                  </a>
-                </dd>
-              </dl>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 }
