@@ -3184,7 +3184,9 @@ main {
 .visual-program-grid {
   display: grid;
   gap: 1.15rem;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .visual-program-card {

@@ -178,12 +178,19 @@ export function Home() {
           <h2 id="diploma-heading" className="section-heading section-heading--ruled">
             Diploma programmes
           </h2>
-          <VisualProgramGrid items={diplomaProgramVisuals} />
-          <p style={{ marginTop: "1rem" }}>
-            <Link className="btn btn-outline-dark" to="/programs">
-              Professional &amp; short courses
-            </Link>
-          </p>
+          <VisualProgramGrid items={diplomaProgramVisuals} applyLink={false} />
+          <div style={{ marginTop: "1.5rem", textAlign: "center" }}>
+            <p style={{ marginBottom: "0.5rem" }}>
+              <Link className="btn btn-primary" to="/apply-here#application-form">
+                Apply for a programme
+              </Link>
+            </p>
+            <p>
+              <Link className="btn btn-outline-dark" to="/programs">
+                Professional &amp; short courses
+              </Link>
+            </p>
+          </div>
         </div>
       </section>
 
