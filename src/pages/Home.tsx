@@ -210,9 +210,6 @@ export function Home() {
 
       <section className="section container" aria-labelledby="visit-heading">
         <div className="visual-split">
-          <div className="visual-split__media">
-            <img src={facilitiesHighlightUrl} alt="Electronics laboratory at KIITEC" width={1024} height={683} loading="lazy" />
-          </div>
           <div className="visual-split__text">
             <h2 id="visit-heading" className="section-heading">
               Visit us in Suye, Arusha
