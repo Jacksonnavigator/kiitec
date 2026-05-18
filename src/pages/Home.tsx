@@ -12,7 +12,6 @@ import {
   homeHeroBackgroundSlides,
 } from "../data/sitePhotos";
 import { mastercardLogoUrl, skillsToFlyPosterUrl, tagline } from "../site/brand";
-import { siteContact } from "../site/contact";
 
 export function Home() {
   const [heroSlide, setHeroSlide] = useState(0);
