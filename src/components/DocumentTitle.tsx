@@ -18,7 +18,7 @@ const titles: Record<string, string> = {
 
 const descriptions: Record<string, string> = {
   "/":
-    "Don Bosco KIITEC — NACTE-registered technical institute (REG/EOS/027) in Arusha. Diploma and short courses in engineering, electronics, computing, and automation.",
+    "Don Bosco KIITEC — NACTVET-registered technical institute (REG/EOS/027) in Arusha. Diploma and short courses in engineering, electronics, computing, and automation.",
   "/about": "Mission, facilities, and background of Don Bosco KIITEC (KIITEC), a Salesian technical institute in Arusha, Tanzania.",
   "/programs": "Diploma pathways and professional or short courses at KIITEC — computer engineering, renewable energy, electronics, telecommunications, and industrial automation.",
   "/admissions": "Entry criteria, sponsorship, and online application for Don Bosco KIITEC, Arusha.",
@@ -42,7 +42,7 @@ export function DocumentTitle() {
     if (meta) {
       meta.content =
         descriptions[key] ??
-        (titles[key] ? defaultDescription : `Page not found — ${base}, NACTE-registered technical institute in Arusha, Tanzania.`);
+        (titles[key] ? defaultDescription : `Page not found — ${base}, NACTVET-registered technical institute in Arusha, Tanzania.`);
     }
   }, [pathname]);
 

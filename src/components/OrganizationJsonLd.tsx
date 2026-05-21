@@ -16,7 +16,7 @@ export function OrganizationJsonLd() {
       alternateName: "Kilimanjaro International Institute of Telecommunications, Electronics and Computers",
       url: canonicalSiteUrl,
       description:
-        "NACTE-registered technical institute (REG/EOS/027) in Arusha, Tanzania. Engineering and technology training.",
+        "NACTVET-registered technical institute (REG/EOS/027) in Arusha, Tanzania. Engineering and technology training.",
       address: {
         "@type": "PostalAddress",
         streetAddress: siteContact.poBox,

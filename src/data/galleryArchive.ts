@@ -189,6 +189,7 @@ export function gallerySectionForSrc(src: string): GallerySectionId {
   if (
     lower.includes('/2024/08/img_') ||
     lower.includes('kaab') ||
+    lower.includes('nactvet') ||
     lower.includes('nacte') ||
     lower.includes('africa') ||
     /img_67[68]/i.test(lower) ||

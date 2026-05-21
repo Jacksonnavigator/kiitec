@@ -1,4 +1,6 @@
-/** NACTE diploma pathways as published on the 2026 Skills to Fly / Mastercard Foundation poster. */
+/** NACTVET diploma pathways as published on the 2026 Skills to Fly / Mastercard Foundation poster. */
+export const diplomaCourseCategoryLabel = "3 Years Courses - NACTVET" as const;
+
 export interface DiplomaProgram {
   title: string;
   body: string;

@@ -1,4 +1,5 @@
 import { legacyImagesBase } from "../site/brand";
+import { diplomaCourseCategoryLabel } from "./diplomaPrograms";
 
 const u = (path: string) => `${legacyImagesBase}/${path}`;
 
@@ -140,7 +141,7 @@ export const campusGalleryPhotos = [
   {
     src: u("2025/05/new4-1024x683.jpg"),
     title: "Main gate & course signboard",
-    alt: "Campus entrance gate with large Don Bosco KIITEC sign listing NACTE registration, diploma fields, and short courses.",
+    alt: "Campus entrance gate with large Don Bosco KIITEC sign listing NACTVET registration, diploma fields, and short courses.",
   },
   {
     src: u("2025/05/new5-1024x683.jpg"),
@@ -187,43 +188,43 @@ export const programsStripPhotos = [
 export const diplomaProgramVisuals = [
   {
     title: "Electrical & Computer Engineering",
-    meta: "Long term · NACTE",
+    meta: diplomaCourseCategoryLabel,
     imageSrc: u("2025/05/DB-Kiitec-43-scaled.jpg"),
     imageAlt: "Computer teaching laboratory at KIITEC.",
   },
   {
     title: "Electronics & Telecommunication Engineering",
-    meta: "Long term · NACTE",
+    meta: diplomaCourseCategoryLabel,
     imageSrc: u("2025/06/new-scaled.jpg"),
     imageAlt: "Electronics training benches with instruments.",
   },
   {
     title: "Electrical & Industrial Automation Engineering",
-    meta: "Long term · NACTE",
+    meta: diplomaCourseCategoryLabel,
     imageSrc: u("2025/05/DB-Kiitec-44-scaled.jpg"),
     imageAlt: "Industrial automation workshop with trainers.",
   },
   {
     title: "Electrical & Renewable Energy Engineering",
-    meta: "Long term · NACTE",
+    meta: diplomaCourseCategoryLabel,
     imageSrc: u("2025/05/DB-Kiitec-47-scaled.jpg"),
     imageAlt: "Renewable energy and electrical training lab.",
   },
   {
     title: "Artificial Intelligence & Machine Learning Engineering",
-    meta: "Long term · NACTE",
+    meta: diplomaCourseCategoryLabel,
     imageSrc: u("2025/05/DB-Kiitec-32-1024x684.jpg"),
     imageAlt: "Innovation lab with computers and 3D printer.",
   },
   {
     title: "Data Science & Analytics Engineering",
-    meta: "Long term · NACTE",
+    meta: diplomaCourseCategoryLabel,
     imageSrc: u("2024/08/IMG_6267-scaled.jpg"),
     imageAlt: "Students with a robotics project in the lab.",
   },
   {
     title: "Robotics & Drones Engineering",
-    meta: "Long term · NACTE",
+    meta: diplomaCourseCategoryLabel,
     imageSrc: u("2024/08/IMG_5947-scaled.jpg"),
     imageAlt: "Student engineering project on a workbench.",
   },
@@ -283,7 +284,7 @@ export const aboutGalleryPhotos = [
   },
   {
     src: u("2024/11/DBKiitec-184-scaled.jpg"),
-    title: "NACTE graduation moment",
+    title: "NACTVET graduation moment",
     alt: "Graduate in black gown receiving a framed National Council certificate on stage from an official in red academic dress under a tent.",
   },
   {

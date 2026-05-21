@@ -10,7 +10,7 @@ export function About() {
     <>
       <PagePhotoHero imageSrc={heroImage} imageAlt="KIITEC laboratory entrance" title="About Don Bosco KIITEC">
         <p className="page-hero-lede page-hero-lede--light">
-          NACTE-registered technical institute (REG/EOS/027) in Arusha — training technicians since 2004.
+          NACTVET-registered technical institute (REG/EOS/027) in Arusha — training technicians since 2004.
         </p>
       </PagePhotoHero>
 

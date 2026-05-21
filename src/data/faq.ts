@@ -1,7 +1,7 @@
 export const homeFaq = [
   {
     title: "What can I study?",
-    body: "NACTE diplomas in seven engineering fields, professional IT & security courses, and short skills programmes. See Programs for the list.",
+    body: "NACTVET diplomas in seven engineering fields, professional IT & security courses, and short skills programmes. See Programs for the list.",
   },
   {
     title: "Fees and payment",

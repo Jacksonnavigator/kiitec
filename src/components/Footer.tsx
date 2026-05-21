@@ -8,7 +8,7 @@ export function Footer() {
         <div>
           <p className="footer-heading">Don Bosco KIITEC</p>
           <p className="footer-text">
-            NACTE-registered technical institute in Arusha, Tanzania.
+            NACTVET-registered technical institute in Arusha, Tanzania.
           </p>
           <p className="footer-text" style={{ marginTop: "0.75rem" }}>
             {siteContact.poBox}

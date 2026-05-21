@@ -1,39 +1,42 @@
 import { FormEvent, useState } from "react";
 import { siteContact } from "../site/contact";
-import { diplomaPrograms } from "../data/diplomaPrograms";
+import { diplomaCourseCategoryLabel, diplomaPrograms } from "../data/diplomaPrograms";
 
 export function ApplicationForm() {
   const [sentHint, setSentHint] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const form = e.currentTarget;
-    const fd = new FormData(form);
-    const name = String(fd.get("applicant_name") ?? "").trim();
-    const dob = String(fd.get("dob") ?? "").trim();
-    const email = String(fd.get("email") ?? "").trim();
-    const phone = String(fd.get("phone") ?? "").trim();
-    const programme = String(fd.get("programme") ?? "").trim();
-    const education = String(fd.get("education") ?? "").trim();
-    const intake = String(fd.get("intake") ?? "").trim();
-    const message = String(fd.get("message") ?? "").trim();
-    const subject = `Application — ${name || "Applicant"}`;
-    const body = [
-      "APPLICATION (submitted via website form)",
-      "",
-      `Full name: ${name}`,
-      `Date of birth: ${dob || "(not provided)"}`,
-      `Email: ${email}`,
-      `Phone: ${phone}`,
-      `Programme: ${programme || "(not selected)"}`,
-      `Education / qualifications: ${education || "(not provided)"}`,
-      `Preferred intake / year: ${intake || "(not provided)"}`,
-      "",
-      "Additional information:",
-      message || "(none)",
-    ].join("\n");
-    window.location.href = `mailto:${siteContact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    setSentHint(true);
+    setIsSubmitting(true);
+    setError("");
+
+    try {
+      const form = e.currentTarget;
+      const formData = new FormData(form);
+      
+      // Submit to Formspree
+      const response = await fetch("https://kiitec.ac.tz/api/send-application.php", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setSentHint(true);
+        form.reset();
+        setIsSubmitting(false);
+      } else {
+        setError("Failed to send application. Please try again.");
+        setIsSubmitting(false);
+      }
+    } catch (err) {
+      setError("Network error. Please check your connection and try again.");
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -48,12 +51,16 @@ export function ApplicationForm() {
 
       {sentHint ? (
         <div className="app-form-success" role="status">
-          <p className="app-form-success__title">Email draft ready</p>
+          <p className="app-form-success__title">Application submitted!</p>
           <p className="app-form-success__text">
-            If your mail program did not open, send your details manually to{" "}
-            <a href={`mailto:${siteContact.email}`}>{siteContact.email}</a> with the subject line{" "}
-            <strong>Application — [your name]</strong>.
+            Your application has been sent to <a href={`mailto:${siteContact.email}`}>{siteContact.email}</a>. The registrar will review your details and reply with next steps.
           </p>
+        </div>
+      ) : null}
+
+      {error ? (
+        <div className="app-form-error" role="alert" style={{ padding: "1rem", marginBottom: "1rem", backgroundColor: "#ffebee", border: "1px solid #ef5350", borderRadius: "8px", color: "#c62828" }}>
+          <p>{error}</p>
         </div>
       ) : null}
 
@@ -126,7 +133,7 @@ export function ApplicationForm() {
                 <option value="" disabled>
                   Select a programme
                 </option>
-                <optgroup label="Long term — NACTE diplomas">
+                <optgroup label={diplomaCourseCategoryLabel}>
                   {diplomaPrograms.map((p) => (
                     <option key={p.formValue} value={p.formValue}>
                       {p.title}
@@ -190,11 +197,11 @@ export function ApplicationForm() {
         </fieldset>
 
         <div className="app-form__footer">
-          <button type="submit" className="btn btn-primary app-form__submit">
-            Submit application
+          <button type="submit" className="btn btn-primary app-form__submit" disabled={isSubmitting}>
+            {isSubmitting ? "Submitting…" : "Submit application"}
           </button>
           <p className="app-form__footnote">
-            By submitting, you start an email to the institute—not an automated portal. The registrar will reply with next steps.
+            Your application goes directly to the registrar's email. You'll receive a response within 2–3 business days.
           </p>
         </div>
       </form>

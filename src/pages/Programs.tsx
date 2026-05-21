@@ -11,7 +11,7 @@ export function Programs() {
     <>
       <PagePhotoHero imageSrc={heroImage} imageAlt="KIITEC training laboratories" eyebrow="Educational offerings" title="Programs">
         <p className="page-hero-lede page-hero-lede--light">
-          NACTE diplomas, professional pathways, and short skills courses—confirm fees and intakes with the registrar.
+          NACTVET diplomas, professional pathways, and short skills courses—confirm fees and intakes with the registrar.
         </p>
         <div className="hero-actions" style={{ marginTop: "1.25rem" }}>
           <Link className="btn btn-primary" to="/apply-here#application-form">

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { ApplicationForm } from "../components/ApplicationForm";
 import { FaqAccordion } from "../components/FaqAccordion";
 import { HomeNewsStrip } from "../components/HomeNewsStrip";
 import { StatsStrip } from "../components/StatsStrip";
@@ -59,18 +60,12 @@ export function Home() {
               {tagline}
             </h1>
             <p className="hero-lede">
-              Hands-on technical training in telecommunications, electronics, computing, and automation—NACTE-registered
+              Hands-on technical training in telecommunications, electronics, computing, and automation—NACTVET-registered
               (REG/EOS/027), rooted in the Salesian tradition, and supported by partners across Tanzania and beyond.
             </p>
             <div className="hero-actions">
               <Link className="btn btn-primary" to="/programs">
                 View programs
-              </Link>
-              <Link className="btn btn-primary" to="/apply-here#application-form">
-                Apply now
-              </Link>
-              <Link className="btn btn-outline-dark" to="/apply-here#admissions">
-                Admission criteria
               </Link>
               <Link className="btn btn-outline-dark" to="/gallery">
                 Browse photo archive
@@ -136,12 +131,12 @@ export function Home() {
               &quot;Skills to Fly&quot; — girls in diploma engineering
             </h2>
             <p className="spotlight-text">
-              Scholarships for <strong>200 girls</strong> in NACTE diploma engineering—seven pathways on the official poster. Form
+              Scholarships for <strong>200 girls</strong> in NACTVET diploma engineering—seven pathways on the official poster. Form
               Four/Six with four passes (min. four D grades), two science subjects.{" "}
               <Link to="/news#skills-to-fly">Read more</Link>
             </p>
             <div className="hero-actions">
-              <Link className="btn btn-primary" to="/apply-here">
+              <Link className="btn btn-primary" to="#application-form">
                 Apply now
               </Link>
               <Link className="btn btn-outline-dark" to="/news#skills-to-fly">
@@ -173,7 +168,19 @@ export function Home() {
         </article>
       </section>
 
-            <section className="section section-alt" aria-labelledby="diploma-heading">
+      <section className="section section-alt apply-page" aria-labelledby="home-apply-heading">
+        <div className="container">
+          <h2 id="home-apply-heading" className="section-heading section-heading--ruled">
+            Apply to KIITEC
+          </h2>
+          <p className="section-intro">Send your details with the form below.</p>
+          <div id="application-form" className="apply-form-wrap apply-form-wrap--centered">
+            <ApplicationForm />
+          </div>
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="diploma-heading">
         <div className="container">
           <h2 id="diploma-heading" className="section-heading section-heading--ruled">
             Diploma programmes
@@ -181,7 +188,7 @@ export function Home() {
           <VisualProgramGrid items={diplomaProgramVisuals} applyLink={false} />
           <div style={{ marginTop: "1.5rem", textAlign: "center" }}>
             <p style={{ marginBottom: "0.5rem" }}>
-              <Link className="btn btn-primary" to="/apply-here#application-form">
+              <Link className="btn btn-primary" to="#application-form">
                 Apply for a programme
               </Link>
             </p>

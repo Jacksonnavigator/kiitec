@@ -1,6 +1,6 @@
 import { FormEvent, useState } from "react";
 import { Link } from "react-router-dom";
-import { diplomaPrograms } from "../data/diplomaPrograms";
+import { diplomaCourseCategoryLabel, diplomaPrograms } from "../data/diplomaPrograms";
 import { siteContact } from "../site/contact";
 
 export function EnquiryForm() {
@@ -63,7 +63,7 @@ export function EnquiryForm() {
           </label>
           <select id="enq-programme" name="programme" className="form-input form-select" defaultValue="">
             <option value="">Select programme (optional)</option>
-            <optgroup label="Long term courses">
+            <optgroup label={diplomaCourseCategoryLabel}>
               {diplomaPrograms.map((p) => (
                 <option key={p.formValue} value={p.formValue}>
                   {p.title}

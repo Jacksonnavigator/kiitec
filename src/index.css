@@ -2,6 +2,13 @@
   --color-crimson: #9e1b32;
   --color-crimson-light: #c73d52;
   --color-crimson-dark: #751222;
+  /* KIITEC logo palette — triangle mark (sky, sun, mountains, wordmark red) */
+  --color-logo-red: #e31e24;
+  --color-logo-sky: #6eb8e8;
+  --color-logo-sky-deep: #4a9fd4;
+  --color-logo-sun: #f5c400;
+  --color-logo-green: #3d9a4f;
+  --color-logo-green-deep: #2a7a3c;
   --color-gold: #b08d45;
   --color-gold-soft: rgba(176, 141, 69, 0.28);
   --color-ink: #12131a;
@@ -322,6 +329,13 @@ a:hover {
   margin-left: -0.55rem;
 }
 
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
 .brand:hover {
   color: inherit;
 }
@@ -346,6 +360,15 @@ a:hover {
   white-space: nowrap;
 }
 
+.brand-reg {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-crimson);
+  line-height: 1.2;
+}
+
 @media (max-width: 720px) {
   .brand-logo {
     height: 2.4rem;
@@ -363,6 +386,10 @@ a:hover {
     max-width: 9.5rem;
     line-height: 1.2;
   }
+
+  .brand-reg {
+    letter-spacing: 0.06em;
+  }
 }
 
 .primary-nav {
@@ -377,7 +404,7 @@ a:hover {
   font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: -0.015em;
-  color: var(--color-ink);
+  color: var(--color-crimson-dark);
   text-decoration: none;
   padding: 0.48rem 0.92rem;
   border-radius: var(--radius-pill);
@@ -386,13 +413,20 @@ a:hover {
 
 .nav-link:hover {
   color: var(--color-crimson);
-  background: rgba(158, 27, 50, 0.07);
+  background: rgba(158, 27, 50, 0.1);
 }
 
 .nav-link.active {
   color: #fff;
   background: linear-gradient(135deg, var(--color-crimson-light) 0%, var(--color-crimson) 48%, var(--color-crimson-dark) 100%);
   box-shadow: 0 3px 14px rgba(158, 27, 50, 0.28);
+}
+
+.nav-link--external::after {
+  content: "↗";
+  margin-left: 0.2em;
+  font-size: 0.75em;
+  opacity: 0.75;
 }
 
 .nav-toggle {
@@ -1667,61 +1701,140 @@ main {
   border: 0;
 }
 
+/* Stats strip — red gradient with compact stat cards */
 .stats-strip {
   position: relative;
-  background: linear-gradient(100deg, #0f1016 0%, #18111a 38%, #221018 100%);
-  color: #ede9e4;
-  border-block: 1px solid rgba(255, 255, 255, 0.06);
   overflow: hidden;
+  background: linear-gradient(
+    115deg,
+    var(--color-crimson-dark) 0%,
+    var(--color-logo-red) 32%,
+    var(--color-crimson) 55%,
+    #c73d52 78%,
+    var(--color-crimson-light) 100%
+  );
+  border-block: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 36px rgba(117, 18, 34, 0.35);
 }
 
 .stats-strip::after {
   content: "";
   position: absolute;
   inset: 0;
-  opacity: 0.55;
-  background: radial-gradient(ellipse 70% 120% at 15% 50%, rgba(158, 27, 50, 0.5), transparent 55%),
-    radial-gradient(ellipse 50% 80% at 90% 20%, rgba(176, 141, 69, 0.12), transparent 45%);
+  z-index: 0;
   pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 120% at 0% 50%, rgba(255, 255, 255, 0.1), transparent 55%),
+    radial-gradient(ellipse 50% 80% at 100% 0%, rgba(0, 0, 0, 0.12), transparent 50%);
+}
+
+.stats-strip__pattern {
+  position: absolute;
+  inset: -12%;
+  pointer-events: none;
+  z-index: 1;
+  background-repeat: repeat;
+  background-size: clamp(5.5rem, 11vw, 7.5rem) auto;
+  background-position: center;
+  opacity: 0.11;
+  filter: brightness(1.25) saturate(0.85);
+  transform: rotate(-6deg) scale(1.08);
 }
 
 .stats-strip-inner {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.35rem 1.75rem;
-  padding-block: 1.5rem 1.65rem;
+  gap: 1.15rem 1.5rem;
+  padding-block: 1.15rem 1.25rem;
+  padding-inline: clamp(0.5rem, 2vw, 1rem);
 }
 
 @media (max-width: 900px) {
   .stats-strip-inner {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem 1.25rem;
   }
 }
 
 @media (max-width: 480px) {
   .stats-strip-inner {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem 1rem;
+  }
+
+  .stats-strip__pattern {
+    background-size: 4.75rem auto;
+    opacity: 0.09;
   }
 }
 
+.stats-strip-item {
+  min-width: 0;
+}
+
+.stats-strip-card {
+  height: 100%;
+  padding: 0.55rem 0.65rem 0.6rem;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 18px rgba(18, 19, 26, 0.12);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+@media (hover: hover) {
+  .stats-strip-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(18, 19, 26, 0.16);
+  }
+}
+
+.stats-strip-item--gold .stats-strip-card {
+  border-top: 3px solid var(--color-logo-sun);
+}
+
+.stats-strip-item--red .stats-strip-card {
+  border-top: 3px solid var(--color-logo-red);
+}
+
+.stats-strip-item--green .stats-strip-card {
+  border-top: 3px solid var(--color-logo-green);
+}
+
+.stats-strip-item--sky .stats-strip-card {
+  border-top: 3px solid var(--color-logo-sky-deep);
+}
+
 .stats-strip-value {
+  margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(1.4rem, 2.8vw, 1.95rem);
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
   font-weight: 700;
-  color: #fff8f5;
-  line-height: 1.12;
-  letter-spacing: -0.03em;
-  text-shadow: 0 0 40px rgba(255, 200, 210, 0.15);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-logo-red);
+}
+
+.stats-strip-item--gold .stats-strip-value {
+  color: #b8860b;
+}
+
+.stats-strip-item--green .stats-strip-value {
+  color: var(--color-logo-green-deep);
+}
+
+.stats-strip-item--sky .stats-strip-value {
+  color: var(--color-logo-sky-deep);
 }
 
 .stats-strip-label {
-  margin-top: 0.4rem;
-  font-size: 0.8125rem;
-  line-height: 1.5;
-  color: rgba(237, 233, 228, 0.78);
-  font-weight: 500;
+  margin: 0.3rem 0 0;
+  font-size: 0.7rem;
+  line-height: 1.4;
+  font-weight: 600;
+  color: var(--color-ink-muted);
 }
 
 .news-strip-block .section-heading {
@@ -2782,6 +2895,11 @@ main {
 
 .apply-form-wrap {
   position: relative;
+}
+
+.apply-form-wrap--centered {
+  max-width: 42rem;
+  margin-inline: auto;
 }
 
 /* Application form panel */
